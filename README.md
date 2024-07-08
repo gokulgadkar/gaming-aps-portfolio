@@ -93,6 +93,10 @@ Searching in mobile games is very slow and especially when there we are searchin
 		- **Search**: O(m), where m is the length of the string.
 	- **Space Complexity**: O(N * K), where N is the number of nodes and K is the pointer/reference size.
 
+**code**
+- [Radix-Tree + HashMaps](Codes/r-hash.cpp)
+- [Radix-Tree + Maps](Codes/r-map.cpp)
+
 
 ---
 
@@ -121,6 +125,8 @@ eg: If high priority object was added at end. It should be loaded into top level
 
 - **Unsorted List:** Objects will remain unsorted at every level, which may impact performance and retrieval efficiency.
 
+**code**
+- [Modified QuadTree](Codes/qtree-p.cpp)
 
 ---
 
@@ -149,7 +155,7 @@ Q - maximum quantity
 - Knapsack Algorithm
 
 **code**
-- [a link](Codes/knap.cpp)
+- [KnapSack](Codes/knap.cpp)
 
 
 ---
@@ -167,7 +173,8 @@ Lazy rendering/loading is a process where only the visible distance based on the
 - The algorithm will return the objects to be rendered based on the range of the query.
 - By querying a range (x, y, w, h), we can get all objects present within that range.
 
-
+**code**
+- [QuadTree](Codes/qtree.cpp)
 
 
 
@@ -187,7 +194,8 @@ This type of rendering prioritizes loading high-priority objects first. For exam
 **Limitation:** 
 - To achieve this rendering method, we can use quad-trees by manually storing important objects at higher levels and lower-priority objects at lower levels.
 
-
+**code**
+- [QuadTree](Codes/qtree.cpp)
 
 
 ---
@@ -211,7 +219,8 @@ Collision detection in large 2D spaces with too many objects presents big comput
 **Working of Quad-Tree**
 Quad-Trees works by dividing the 2D space into 4 quadrants, recursively subdividing each quadrant depending on capacity. This hierarchical partitioning allows for efficient organization and retrieval of spatial data. When an object is added to a QuadTree, it is placed into the appropriate quadrant based on its coordinates. This spatial partitioning significantly reduces the number of comparisons needed to detect collisions, as objects are only compared with others within the same or neighboring quadrants.
 
-
+**code**
+- [QuadTree](Codes/qtree.cpp)
 
 
 ---
@@ -303,4 +312,10 @@ Instead of directly checking all objects. Use of quad-trees to identify importan
 <img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/e2e50955-1471-4871-83c7-07957bc15ee4" width="400">
 
 In above image we need to show bullet marks on blue walls which can be done by finding if a line of fire intersects with edges of polygons
+
+
+**code**
+- [Line Segment intersection](Codes/line.cpp)
+- [Quad Tree](Codes/qtree.cpp)
+
 
