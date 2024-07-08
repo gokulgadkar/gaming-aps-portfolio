@@ -73,8 +73,11 @@ Searching in mobile games is very slow and especially when there we are searchin
 - Space Optimization
 
 **2 step modifications for space optimization**
-1. First Trie to Radix tree 
+1. First Trie[1] to Radix tree
 2. Replacing standard arrays for storing pointer to Maps/hash-maps
+
+**Radix Tree**
+It is a compressed form of trie tree data structure that store a set of characters in a node untill a split takes place. Mostly useful in case of words with diverse letter sequence eg: umbrella, america, wikipedia etc.[2]
 
 **Understanding second modification**
 1. **Radix tree + Maps**
@@ -167,7 +170,10 @@ Q - maximum quantity
 Lazy rendering/loading is a process where only the visible distance based on the player's current position is rendered. This technique helps save RAM and GPU by rendering only what is important for the player's experience in the game.
 
 **Proposed Algorithm:**
-- Use Quad-trees to store the spatial location of objects.
+- Use Quad-trees[3] to store the spatial location of objects.
+
+**Working of Quad-Tree**
+Quad-Trees works by dividing the 2D space into 4 quadrants, recursively subdividing each quadrant depending on capacity. This hierarchical partitioning allows for efficient organization and retrieval of spatial data. 
 
 **Functionality:**
 - The algorithm will return the objects to be rendered based on the range of the query.
@@ -189,7 +195,7 @@ This type of rendering prioritizes loading high-priority objects first. For exam
 
 **Proposed Algorithm:**
 - Quad-trees
-- Oct-trees (for 3D environments)
+- Oct-trees (for 3D environments) [4]
 
 **Limitation:** 
 - To achieve this rendering method, we can use quad-trees by manually storing important objects at higher levels and lower-priority objects at lower levels.
@@ -210,14 +216,11 @@ This type of rendering prioritizes loading high-priority objects first. For exam
 Collision detection in large 2D spaces with too many objects presents big computational challenges. Utilizing Quad-Trees for this purpose offers a more efficient solution compared to using  Red-Black Trees/ hash-maps, specifically in cases which has many objects distributed across large spaces.
 
 **Data structure**
- 1. Quad-Trees: It is a tree data structure that stores information related to each layer. Each layer then gets subdivided into 4 quadrants if information exceeds the capacity of each layer.
+ 1. Quad-Trees: It is a tree data structure that stores information related to each layer. Each layer then gets subdivided into 4 quadrants if information exceeds the capacity of each layer. When an object is added to a QuadTree, it is placed into the appropriate quadrant based on its coordinates. This spatial partitioning significantly reduces the number of comparisons needed to detect collisions, as objects are only compared with others within the same or neighboring quadrants.
 
 **Comparison with**
 1. **Red-Black trees**: It stores in a order of creation but doesn't maintain data about objects based on its spatial position.
 2. **Hash-Maps**: It doesn't store object data in order of creation/ based on spatial location but is faster in insertion, query and deletion.
-
-**Working of Quad-Tree**
-Quad-Trees works by dividing the 2D space into 4 quadrants, recursively subdividing each quadrant depending on capacity. This hierarchical partitioning allows for efficient organization and retrieval of spatial data. When an object is added to a QuadTree, it is placed into the appropriate quadrant based on its coordinates. This spatial partitioning significantly reduces the number of comparisons needed to detect collisions, as objects are only compared with others within the same or neighboring quadrants.
 
 **code**
 - [QuadTree](Codes/qtree.cpp)
@@ -229,14 +232,13 @@ Quad-Trees works by dividing the 2D space into 4 quadrants, recursively subdivid
 
 ### Collision detection in large 3D space
 
-
 <img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/61390e72-68cf-4779-8145-8e376b13eb09" height="300">
 
 
 Similar to quad-tree there is data structure for a 3d space which stores data in x,y,z coordinates.
 This data-structure is called Oct-tree. 
 
-This data structure handles cuboidal space and operates by dividing cuboid into 8 smaller cuboids.
+This data structure handles cuboidal space and operates by dividing cuboid into 8 smaller cuboids. Each layer has specific capacity 
 
 ---
 
@@ -285,15 +287,21 @@ By leveraging the A* algorithm with an appropriate heuristic, pathfinding in dyn
 
 ### Event Handling 
 
-In case of event handling small games tend to use arrays/list and linked list. But a much better data structure would be to use Red-Black trees which maintain order and also has a faster access time compared to list.
+In event handling for small games, arrays/lists and linked lists are commonly used. However, a more efficient data structure would be Red-Black trees, which maintain order and offer faster access times compared to lists.
 
-Scenario:
--  Incase you need to access events from middle section. A list becomes less effective.
+**Scenario**:
+When you need to access events from the middle section, a list becomes less effective.
 
-Time complexity:
+**Advantages of Red-Black Trees** :
+Ordered Data: Red-Black trees keep the data sorted, which is beneficial for event handling.
+Faster Access: Compared to lists, accessing events in a Red-Black tree is more efficient.
+
+**Time complexity**:
 -  Access time : O(log n)
 -  Insertion : O(Log n)
 -  Deletion : O(Log n)
+
+By using Red-Black trees, you can improve the efficiency of event handling in your game, especially when accessing or modifying events frequently.
 
 **code**
 - [Red-Black Trees](Codes/rb.cpp)
@@ -325,3 +333,11 @@ In above image we need to show bullet marks on blue walls which can be done by f
 - [Quad Tree](Codes/qtree.cpp)
 
 
+
+
+
+## References
+[1] https://en.wikipedia.org/wiki/Trie
+[2] https://en.wikipedia.org/wiki/Radix_tree
+[3] https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/quadtrees.pdf
+[4] https://en.wikipedia.org/wiki/Octree
