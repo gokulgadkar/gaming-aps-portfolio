@@ -16,11 +16,9 @@
 
 ## Contents
 1. [Introduction](#introduction)
-2. [Why Portfolio](#why-portfolio)
-3. [Objectives](#objectives)
-4. [Design](#design)
-5. [Challenges](#challenges)
-6. [To-Do List](#to-do-list)
+2. [Objectives](#objectives)
+3. [Business Cases](#business-cases)
+
 
 ---
 
@@ -47,15 +45,15 @@ Problems faced:
 1. **Modified Algorithms**
    -  Search functionality in mobile games
    -  Level wise rendering (Static object) + Objects randomly generated
-2. **Proposing existing technique/algorithm for a task **
+2. **Proposing existing technique/algorithm for a task**
    -  In-App Bundle (New Approach for creating bundles of items)
    -  Lazy rendering/loading (Static objects)
    -  Level wise rendering (Static objects)
 3. **Exploring algorithms**
-   -  Pathfinding for NPCs (Following a static destination)
-   -  Pathfinding for NPCs (Following a moving object)
    -  Advanced Collision Detection in Large 2D
    -  Collision detection in large 3D space
+   -  Pathfinding for NPCs (Following a static destination)
+   -  Pathfinding for NPCs (Following a moving object)
    -  Event Handling
 
 ---
@@ -96,9 +94,35 @@ Searching in mobile games is very slow and especially when there we are searchin
 	- **Space Complexity**: O(N * K), where N is the number of nodes and K is the pointer/reference size.
 
 
+---
+
+
+### Level wise rendering (Static object) + Objects randomly generated
+
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/f030d3f7-9692-46e7-9753-af11fc2f2f29" width="400">
+
+To handle the randomly generated objects (Not generated sequentially based on priority) we need the algorithm to automatically sort of objects based on priority, This implies we need to modify the algorithm to accommodate automated sorting.
+
+eg: If high priority object was added at end. It should be loaded into top level instead of subdivided lower levels.
+
+**Modification Proposed:**
+- Quad-Trees + Priority Vector (Priority Queue)
+- Oct-Trees + Priority Vector (Priority Queue)
+
+**Limitations:**
+- **Increased Time Complexity:** Sorting the priority list will increase insertion time complexity to O(n * log(n)), where n is the maximum capacity of a layer.
+
+**Alternative Modification (Not recommended):**
+
+- Quad-Tree + Using Simple Vector and Finding Minimum Element Directly
+
+**Limitation:**
+
+- **Unsorted List:** Objects will remain unsorted at every level, which may impact performance and retrieval efficiency.
 
 
 ---
+
 
 ### In-App Bundle (New Approach for creating bundles of items)
 
@@ -122,6 +146,44 @@ Q - maximum quantity
 
 **Algorithm used**
 - Knapsack Algorithm
+
+
+---
+
+### Lazy rendering/loading (Static objects)
+
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/dfb981d3-fc55-4bd6-8b43-eaf226f8a500" width="300">
+
+Lazy rendering/loading is a process where only the visible distance based on the player's current position is rendered. This technique helps save RAM and GPU by rendering only what is important for the player's experience in the game.
+
+**Proposed Algorithm:**
+- Use Quad-trees to store the spatial location of objects.
+
+**Functionality:**
+- The algorithm will return the objects to be rendered based on the range of the query.
+- By querying a range (x, y, w, h), we can get all objects present within that range.
+
+
+
+
+
+---
+
+
+### Level wise rendering (Static objects)
+
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/f030d3f7-9692-46e7-9753-af11fc2f2f29" width="400">
+
+This type of rendering prioritizes loading high-priority objects first. For example, in games like the GTA series, high-priority objects include houses, roads, and barriers. Low-priority objects might be pebbles, insects, etc.
+
+**Proposed Algorithm:**
+- Quad-trees
+- Oct-trees (for 3D environments)
+
+**Limitation:** 
+- To achieve this rendering method, we can use quad-trees by manually storing important objects at higher levels and lower-priority objects at lower levels.
+
+
 
 
 ---
@@ -166,69 +228,10 @@ This data structure handles cuboidal space and operates by dividing cuboid into 
 ---
 
 
-### Lazy rendering/loading (Static objects)
-
-<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/dfb981d3-fc55-4bd6-8b43-eaf226f8a500" width="300">
-
-Lazy rendering/loading is a process where only the visible distance based on the player's current position is rendered. This technique helps save RAM and GPU by rendering only what is important for the player's experience in the game.
-
-**Proposed Algorithm:**
-- Use Quad-trees to store the spatial location of objects.
-
-**Functionality:**
-- The algorithm will return the objects to be rendered based on the range of the query.
-- By querying a range (x, y, w, h), we can get all objects present within that range.
 
 
 
 
-
----
-
-### Level wise rendering (Static objects)
-
-<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/f030d3f7-9692-46e7-9753-af11fc2f2f29" width="400">
-
-This type of rendering prioritizes loading high-priority objects first. For example, in games like the GTA series, high-priority objects include houses, roads, and barriers. Low-priority objects might be pebbles, insects, etc.
-
-**Proposed Algorithm:**
-- Quad-trees
-- Oct-trees (for 3D environments)
-
-**Limitation:** 
-- To achieve this rendering method, we can use quad-trees by manually storing important objects at higher levels and lower-priority objects at lower levels.
-
-
-
-
----
-
-
-### Level wise rendering (Static object) + Objects randomly generated
-
-<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/f030d3f7-9692-46e7-9753-af11fc2f2f29" width="400">
-
-To handle the randomly generated objects (Not generated sequentially based on priority) we need the algorithm to automatically sort of objects based on priority, This implies we need to modify the algorithm to accommodate automated sorting.
-
-eg: If high priority object was added at end. It should be loaded into top level instead of subdivided lower levels.
-
-**Modification Proposed:**
-- Quad-Trees + Priority Vector (Priority Queue)
-- Oct-Trees + Priority Vector (Priority Queue)
-
-**Limitations:**
-- **Increased Time Complexity:** Sorting the priority list will increase insertion time complexity to O(n * log(n)), where n is the maximum capacity of a layer.
-
-**Alternative Modification (Not recommended):**
-
-- Quad-Tree + Using Simple Vector and Finding Minimum Element Directly
-
-**Limitation:**
-
-- **Unsorted List:** Objects will remain unsorted at every level, which may impact performance and retrieval efficiency.
-
-
----
 
 
 ### Pathfinding for NPCs (Following a static destination)
