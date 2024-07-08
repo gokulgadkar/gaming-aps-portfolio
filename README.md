@@ -46,36 +46,50 @@ Problems faced:
 
 Searching in mobile games is very slow and especially when there we are searching through huge list of inventory items or huge list of cities you manage (In civilization/kingdom based games). In case of mobile games **space** plays an important role. 
 
-We make 2 step modifications to solve this problem. First trie to radix tree then replacing standard arrays for storing pointer to Maps/hash-maps
+**Limits on Mobile**:
+- Memory on most average phones are too low and therefore there is need for optimizing 
 
-Use of 2 modified Radix tree algorithms
-##### 1. Radix tree + Maps
- - **Modification**: Each node in a Radix Tree + Maps uses a map  to store pointers to its child nodes. The keys in the map are character sequences, and the values are pointers to child nodes.
- - **Memory Wise**: More efficient memory usage compared to a basic radix tree due to the space optimization from both the radix tree structure and the map's dynamic allocation.
-- **Time Complexity**:
-	- **Insertion**: O(m * log(n)), where m is the length of the string and n is the number of distinct characters.
-	- **Search**: O(m * log(n)), where m is the length of the string and n is the number of distinct characters.
-- **Space Complexity**: O(N * K), where N is the number of nodes and K is the pointer/reference size.
+**Task**:
+- Space Optimization
+
+**2 step modifications for space optimization**
+1. First Trie to Radix tree 
+2. Replacing standard arrays for storing pointer to Maps/hash-maps
+
+**Understanding second modification**
+1. **Radix tree + Maps**
+	 - **Modification**: Each node in a Radix Tree + Maps uses a map  to store pointers to its child nodes. The keys in the map are character sequences, and the values are pointers to child nodes.
+	 - **Memory Wise**: More efficient memory usage compared to a basic radix tree due to the space optimization from both the radix tree structure and the map's dynamic allocation.
+	- **Time Complexity**:
+		- **Insertion**: O(m * log(n)), where m is the length of the string and n is the number of distinct characters.
+		- **Search**: O(m * log(n)), where m is the length of the string and n is the number of distinct characters.
+	- **Space Complexity**: O(N * K), where N is the number of nodes and K is the pointer/reference size.
     
-##### 2. Radix tree + Hash-maps
-- **Modification**: Each node in a Radix Tree + Hash-Maps uses a hash-map  to store pointers to its child nodes. The keys in the hash-map are character sequences, and the values are pointers to child nodes.
-- **Memory wise**: Efficient memory usage with additional overhead for hash table metadata. Similar to Radix Tree+Maps, but with the dynamic allocation of hash-maps.
-- **Time Complexity**:
-	- **Insertion**: O(m), where m is the length of the string. Hashmap operations (insert and search) are generally O(1) on average.
-	- **Search**: O(m), where m is the length of the string.
-- **Space Complexity**: O(N * K), where N is the number of nodes and K is the pointer/reference size.
-
-
+ 2. **Radix tree + Hash-maps**
+	- **Modification**: Each node in a Radix Tree + Hash-Maps uses a hash-map  to store pointers to its child nodes. The keys in the hash-map are character sequences, and the values are pointers to child nodes.
+	- **Memory wise**: Efficient memory usage with additional overhead for hash table metadata. Similar to Radix Tree+Maps, but with the dynamic allocation of hash-maps.
+	- **Time Complexity**:
+		- **Insertion**: O(m), where m is the length of the string. Hashmap operations (insert and search) are generally O(1) on average.
+		- **Search**: O(m), where m is the length of the string.
+	- **Space Complexity**: O(N * K), where N is the number of nodes and K is the pointer/reference size.
 
 ### In-App Bundle (New Approach for creating bundles of items)
 
 This method was developed to create customized bundles of in-game items based on user spending behavior and preferences. The first step involves collecting detailed statistics on how much users spend on each item within the game. By analyzing this data, we can determine the ratio of spending for each item, which we then scale to a standard value of 100. Any items that have a value of zero after scaling are discarded, as they do not hold significant perceived value to the users.
 
-Next, we evaluate the real-world value of these in-game items. In this context, the scaled perceived values serve as the costs, while the real-world values act as the weights. This dual analysis allows us to generate a set of items and their respective quantities, which can be bundled together and presented to the users in a way that maximizes their appeal and utility.
+Next, we evaluate the real-world value of these in-game items. In this context, the scaled perceived values serve as the costs, while the real-world values of items act as the weights. This dual analysis allows us to generate a set of items and their respective quantities, which can be bundled together and presented to the users in a way that maximizes their appeal and utility.
 
 To ensure these bundles are range of casual user's range, we set the maximum weight as the average daily spending of users. This constraint ensures that the bundles are both attractive to users and acceptable limits of their spending budget. 
 
-Algorithm used
+**Time Complexity**
+O(N * W * Q​) 
+N- Number of items
+W - Weight capacity
+Q - maximum quantity
+
+**Advantage**
+
+**Algorithm used**
 - Knapsack Algorithm
 
 
@@ -93,6 +107,15 @@ Collision detection in large 2D spaces with too many objects presents big comput
 **Working of Quad-Tree**
 Quad-Trees works by dividing the 2D space into 4 quadrants, recursively subdividing each quadrant depending on capacity. This hierarchical partitioning allows for efficient organization and retrieval of spatial data. When an object is added to a QuadTree, it is placed into the appropriate quadrant based on its coordinates. This spatial partitioning significantly reduces the number of comparisons needed to detect collisions, as objects are only compared with others within the same or neighboring quadrants.
 
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/dde707f0-e0ed-4cec-baf1-026ce1c0bcba" width="400">
+
+### Collision detection in large 3D space
+
+Similar to quad-tree there is data structure for a 3d space which stores data in x,y,z coordinates.
+This data-structure is called Oct-tree. 
+
+This data structure handles cuboidal space and operates by dividing cuboid into 8 smaller cuboids.
+
 
 
 ### Lazy rendering/loading (Static objects)
@@ -107,6 +130,8 @@ Lazy rendering/loading is a process where only the visible distance based on the
 - By querying a range (x, y, w, h), we can get all objects present within that range.
 
 
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/dfb981d3-fc55-4bd6-8b43-eaf226f8a500" width="400">
+
 
 
 ### Level wise rendering (Static objects)
@@ -119,6 +144,8 @@ This type of rendering prioritizes loading high-priority objects first. For exam
 
 **Limitation:** 
 - To achieve this rendering method, we can use quad-trees by manually storing important objects at higher levels and lower-priority objects at lower levels.
+
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/f030d3f7-9692-46e7-9753-af11fc2f2f29" width="400">
 
 
 ### Level wise rendering (Static object) + Objects randomly generated
@@ -155,7 +182,7 @@ Pathfinding in games involves finding the shortest path between a source and a d
 **Details:**
 
 - **A* Algorithm**: Combines the benefits of Dijkstra's algorithm and heuristics to efficiently find the shortest path.
-- **Heuristic:** Euclidean distance ensures that the algorithm considers the closest position to destination
+- **Heuristic** : Euclidean distance ensures that the algorithm considers the closest position to destination
 
 
 
@@ -173,11 +200,32 @@ By leveraging the A* algorithm with an appropriate heuristic, pathfinding in dyn
 
 
 
-### 2D shooter games aiming system, Bullet holes
+### Event Handling 
 
-This technique allows you to find intersection point between 2 line segments.
-    Uses:
-          1. Smoothly move randomly moving NPC
-          2. NPCs based on Neural network models
+In case of event handling small games tend to use arrays/list and linked list. But a much better data structure would be to use Red-Black trees which maintain order and also has a faster access time compared to list.
 
-Same technique can be extended to find intersection between polygon and a line segment. This is used in simple 2d games.
+Scenario:
+-  Incase you need to access events from middle section. A list becomes less effective.
+
+Time complexity:
+-  Access time : O(log n)
+-  Insertion : O(Log n)
+-  Deletion : O(Log n)
+
+
+## Incomplete Work
+
+
+### 2D Aiming system, Bullet holes
+
+In case of 2d shooting games. It is important for you to find intersection between 2 line segments or line segment and polygon. 
+
+**Code to find**:
+1. line segment intersection  
+2. intersection between polygon and line segment
+
+**Proposed Design**
+Instead of directly checking all points. Use of quad-trees to identify important local points.
+
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/a9f66a17-3f71-45ad-8996-48142cd3199e" width="400">
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/e2e50955-1471-4871-83c7-07957bc15ee4" width="400">
