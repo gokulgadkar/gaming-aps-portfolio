@@ -43,8 +43,8 @@ Problems faced:
 
 ## Business Cases
 1. **Modified Algorithms**
-   -  Search functionality in mobile games
-   -  Level wise rendering (Static object) + Objects randomly generated
+   -  Search functionality in mobile games 
+   -  Level wise rendering (Static object) + Objects randomly generated 
 2. **Proposing existing technique/algorithm for a task**
    -  In-App Bundle (New Approach for creating bundles of items)
    -  Lazy rendering/loading (Static objects)
