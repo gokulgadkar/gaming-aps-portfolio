@@ -128,7 +128,7 @@ eg: If high priority object was added at end. It should be loaded into top level
 
 - **Unsorted List:** Objects will remain unsorted at every level, which may impact performance and retrieval efficiency.
 
-**code**
+**Code**
 - [Modified QuadTree](Codes/qtree-p.cpp)
 
 ---
@@ -157,7 +157,7 @@ Q - maximum quantity
 **Algorithm used**
 - Knapsack Algorithm
 
-**code**
+**Code**
 - [KnapSack](Codes/knap.cpp)
 
 
@@ -179,7 +179,7 @@ Quad-Trees works by dividing the 2D space into 4 quadrants, recursively subdivid
 - The algorithm will return the objects to be rendered based on the range of the query.
 - By querying a range (x, y, w, h), we can get all objects present within that range.
 
-**code**
+**Code**
 - [QuadTree](Codes/qtree.cpp)
 
 
@@ -200,7 +200,7 @@ This type of rendering prioritizes loading high-priority objects first. For exam
 **Limitation:** 
 - To achieve this rendering method, we can use quad-trees by manually storing important objects at higher levels and lower-priority objects at lower levels.
 
-**code**
+**Code**
 - [QuadTree](Codes/qtree.cpp)
 
 
@@ -222,7 +222,7 @@ Collision detection in large 2D spaces with too many objects presents big comput
 1. **Red-Black trees**: It stores in a order of creation but doesn't maintain data about objects based on its spatial position.
 2. **Hash-Maps**: It doesn't store object data in order of creation/ based on spatial location but is faster in insertion, query and deletion.
 
-**code**
+**Code**
 - [QuadTree](Codes/qtree.cpp)
 
 
@@ -263,7 +263,7 @@ Pathfinding in games involves finding the shortest path between a source and a d
 - **A* Algorithm**: Combines the benefits of Dijkstra's algorithm and heuristics to efficiently find the shortest path.
 - **Heuristic** : Euclidean distance ensures that the algorithm considers the closest position to destination
 
-**code**
+**Code**
 - [A* algorithm](Codes/a-star.cpp)
 
 ---
@@ -280,7 +280,7 @@ In this scenario, Dijkstra's algorithm is highly inefficient as it will keep rec
 
 By leveraging the A* algorithm with an appropriate heuristic, pathfinding in dynamic scenarios becomes more efficient and responsive.
 
-**code**
+**Code**
 - [A* algorithm](Codes/a-star.cpp)
 
 ---
@@ -303,7 +303,7 @@ Faster Access: Compared to lists, accessing events in a Red-Black tree is more e
 
 By using Red-Black trees, you can improve the efficiency of event handling in your game, especially when accessing or modifying events frequently.
 
-**code**
+**Code**
 - [Red-Black Trees](Codes/rb.cpp)
 
 ---
@@ -328,7 +328,7 @@ Instead of directly checking all objects. Use of quad-trees to identify importan
 In above image we need to show bullet marks on blue walls which can be done by finding if a line of fire intersects with edges of polygons
 
 
-**code**
+**Code**
 - [Line Segment intersection](Codes/line.cpp)
 - [Quad Tree](Codes/qtree.cpp)
 
