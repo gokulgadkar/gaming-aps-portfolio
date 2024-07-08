@@ -100,6 +100,7 @@ Searching in mobile games is very slow and especially when there we are searchin
 ### Level wise rendering (Static object) + Objects randomly generated
 
 <img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/f030d3f7-9692-46e7-9753-af11fc2f2f29" width="400">
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/e4aff584-6df6-461f-95d5-93eb684ed9ba" width="400">
 
 To handle the randomly generated objects (Not generated sequentially based on priority) we need the algorithm to automatically sort of objects based on priority, This implies we need to modify the algorithm to accommodate automated sorting.
 
@@ -146,6 +147,9 @@ Q - maximum quantity
 
 **Algorithm used**
 - Knapsack Algorithm
+
+**code**
+- [a link](Codes/knap.cpp)
 
 
 ---
@@ -297,7 +301,6 @@ Instead of directly checking all objects. Use of quad-trees to identify importan
 
 
 <img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/e2e50955-1471-4871-83c7-07957bc15ee4" width="400">
-(b)
 
 In above image we need to show bullet marks on blue walls which can be done by finding if a line of fire intersects with edges of polygons
 
