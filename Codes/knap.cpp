@@ -57,7 +57,7 @@ int main()
     int n = wt.size();
 
     vector<int> val = ratioSpending(spending);
-    int maxVal = boundedKnapsack(W, wt, val, qty, n);
+    int maxVal = optimizedBundle(W, wt, val, qty, n);
 
     cout << "Maximum value in Knapsack = " << maxVal << endl;
 
