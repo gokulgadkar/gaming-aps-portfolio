@@ -261,6 +261,8 @@ Pathfinding in games involves finding the shortest path between a source and a d
 - **A* Algorithm**: Combines the benefits of Dijkstra's algorithm and heuristics to efficiently find the shortest path.
 - **Heuristic** : Euclidean distance ensures that the algorithm considers the closest position to destination
 
+**code**
+- [A* algorithm](Codes/a-star.cpp)
 
 ---
 
@@ -276,6 +278,8 @@ In this scenario, Dijkstra's algorithm is highly inefficient as it will keep rec
 
 By leveraging the A* algorithm with an appropriate heuristic, pathfinding in dynamic scenarios becomes more efficient and responsive.
 
+**code**
+- [A* algorithm](Codes/a-star.cpp)
 
 ---
 
@@ -291,6 +295,8 @@ Time complexity:
 -  Insertion : O(Log n)
 -  Deletion : O(Log n)
 
+**code**
+- [Red-Black Trees](Codes/rb.cpp)
 
 ---
 
