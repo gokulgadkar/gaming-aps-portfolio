@@ -10,7 +10,7 @@
 ---
 
 ## Tagline
-> Changing the world of gaming
+> Exploring algorithms and data-structures in the world of gaming
 
 ---
 
@@ -18,6 +18,7 @@
 1. [Introduction](#introduction)
 2. [Objectives](#objectives)
 3. [Business Cases](#business-cases)
+4. [References](#references)
 
 
 ---
@@ -44,7 +45,7 @@ Problems faced:
 ## Business Cases
 1. **Modified Algorithms**
    -  Search functionality in mobile games 
-   -  Level wise rendering (Static object) + Objects randomly generated 
+   -  Level wise rendering (Static object and Randomly generate objects) 
 2. **Proposing existing technique/algorithm for a task**
    -  In-App Bundle (New Approach for creating bundles of items)
    -  Lazy rendering/loading (Static objects)
@@ -58,7 +59,7 @@ Problems faced:
 
 ---
 
-### Search functionality in mobile games
+### Search Functionality In Mobile Games
 
 <img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/68a96348-5bd3-4f3a-8842-ee48ba54d66b" height="300">
 
@@ -104,7 +105,7 @@ It is a compressed form of trie tree data structure that store a set of characte
 ---
 
 
-### Level wise rendering (Static object) + Objects randomly generated
+### Level Wise Rendering (Static object, Randomly Generated)
 
 <img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/f030d3f7-9692-46e7-9753-af11fc2f2f29" width="400">
 <img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/e4aff584-6df6-461f-95d5-93eb684ed9ba" width="400">
@@ -134,7 +135,7 @@ eg: If high priority object was added at end. It should be loaded into top level
 ---
 
 
-### In-App Bundle (New Approach for creating bundles of items)
+### In-App Bundle (New Approach For Creating Bundles Of Items)
 
 <img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/b10b6ec8-5173-4aff-a852-bfac7ca3ddd4" height="300">
 
@@ -163,7 +164,7 @@ Q - maximum quantity
 
 ---
 
-### Lazy rendering/loading (Static objects)
+### Lazy Rendering/Loading (Static objects)
 
 <img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/dfb981d3-fc55-4bd6-8b43-eaf226f8a500" width="300">
 
@@ -187,7 +188,7 @@ Quad-Trees works by dividing the 2D space into 4 quadrants, recursively subdivid
 ---
 
 
-### Level wise rendering (Static objects)
+### Level Wise Rendering (Static objects)
 
 <img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/f030d3f7-9692-46e7-9753-af11fc2f2f29" width="400">
 
@@ -207,7 +208,7 @@ This type of rendering prioritizes loading high-priority objects first. For exam
 ---
 
 
-### Advanced Collision Detection in Large 2D Spaces Using Quad-Trees
+### Collision Detection In Large 2D Spaces Using Quad-Trees
 
 <img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/dde707f0-e0ed-4cec-baf1-026ce1c0bcba" width="300">
 
@@ -230,7 +231,7 @@ Collision detection in large 2D spaces with too many objects presents big comput
 
 
 
-### Collision detection in large 3D space
+### Collision Detection In Large 3D Space
 
 <img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/61390e72-68cf-4779-8145-8e376b13eb09" height="300">
 
@@ -249,7 +250,7 @@ This data structure handles cuboidal space and operates by dividing cuboid into 
 
 
 
-### Pathfinding for NPCs (Following a static destination)
+### Pathfinding For NPCs (Following a static destination)
 
 Pathfinding in games involves finding the shortest path between a source and a destination. While Dijkstra's algorithm is efficient, it lacks the ability to explore and adapt to different scenarios. Therefore, we use the A* algorithm for its good performance.
 
@@ -269,7 +270,7 @@ Pathfinding in games involves finding the shortest path between a source and a d
 ---
 
 
-### Pathfinding for NPCs (Following a moving object)
+### Pathfinding For NPCs (Following a Moving Object)
 
 In this scenario, Dijkstra's algorithm is highly inefficient as it will keep recalculating the path every time the object being followed changes its current position. On the other hand, using the A* algorithm with Euclidean distance as its heuristic allows the algorithm to dynamically choose the next move based on the current position of the object.
 
@@ -308,10 +309,8 @@ By using Red-Black trees, you can improve the efficiency of event handling in yo
 
 ---
 
-## Incomplete Work
 
-
-### 2D Aiming system, Bullet holes
+### 2D Aiming system, Bullet Holes (Incomplete Work)
 
 In case of 2d shooting games. It is important for you to find intersection between 2 line segments or line segment and polygon. 
 
