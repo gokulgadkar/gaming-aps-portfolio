@@ -12,8 +12,7 @@
 ## Tagline
 > Changing the world of gaming
 
-## Editor's Note:
-
+---
 
 ## Contents
 1. [Introduction](#introduction)
@@ -30,19 +29,42 @@
 
 Problems faced:
 1. Device Contraints
-2. Time of reaction (Of NPC/ of elements in games)
-3. Realistic reaction of elements (More realistic == More complexities)
+2. Reaction time of a object in a game to users input/command
+3. Rendering game assets.
 
-## Why Portfolio
- 
+
+ ---
 
 ## Objectives
-  1. Exploring agorithms employed
+
+  1. Exploring algorithms employed
   2. Designing/ modifying bits of algorithm
   3. Implementation of different algorithm and discussion of experimentation
 
+---
+
+## Business Cases
+1. **Modified Algorithms**
+   -  Search functionality in mobile games
+   -  Level wise rendering (Static object) + Objects randomly generated
+2. **Proposing existing technique/algorithm for a task **
+   -  In-App Bundle (New Approach for creating bundles of items)
+   -  Lazy rendering/loading (Static objects)
+   -  Level wise rendering (Static objects)
+3. **Exploring algorithms**
+   -  Pathfinding for NPCs (Following a static destination)
+   -  Pathfinding for NPCs (Following a moving object)
+   -  Advanced Collision Detection in Large 2D
+   -  Collision detection in large 3D space
+   -  Event Handling
+
+---
 
 ### Search functionality in mobile games
+
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/68a96348-5bd3-4f3a-8842-ee48ba54d66b" height="300">
+
+
 
 Searching in mobile games is very slow and especially when there we are searching through huge list of inventory items or huge list of cities you manage (In civilization/kingdom based games). In case of mobile games **space** plays an important role. 
 
@@ -73,7 +95,15 @@ Searching in mobile games is very slow and especially when there we are searchin
 		- **Search**: O(m), where m is the length of the string.
 	- **Space Complexity**: O(N * K), where N is the number of nodes and K is the pointer/reference size.
 
+
+
+
+---
+
 ### In-App Bundle (New Approach for creating bundles of items)
+
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/b10b6ec8-5173-4aff-a852-bfac7ca3ddd4" height="300">
+
 
 This method was developed to create customized bundles of in-game items based on user spending behavior and preferences. The first step involves collecting detailed statistics on how much users spend on each item within the game. By analyzing this data, we can determine the ratio of spending for each item, which we then scale to a standard value of 100. Any items that have a value of zero after scaling are discarded, as they do not hold significant perceived value to the users.
 
@@ -88,12 +118,20 @@ W - Weight capacity
 Q - maximum quantity
 
 **Advantage**
+- Accurately generate value based bundles. 
 
 **Algorithm used**
 - Knapsack Algorithm
 
 
+---
+
+
 ### Advanced Collision Detection in Large 2D Spaces Using Quad-Trees
+
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/dde707f0-e0ed-4cec-baf1-026ce1c0bcba" width="300">
+
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/1f15388c-3e70-42a7-94c1-29463d14c5b5" height="300">
 
 Collision detection in large 2D spaces with too many objects presents big computational challenges. Utilizing Quad-Trees for this purpose offers a more efficient solution compared to using  Red-Black Trees/ hash-maps, specifically in cases which has many objects distributed across large spaces.
 
@@ -107,18 +145,30 @@ Collision detection in large 2D spaces with too many objects presents big comput
 **Working of Quad-Tree**
 Quad-Trees works by dividing the 2D space into 4 quadrants, recursively subdividing each quadrant depending on capacity. This hierarchical partitioning allows for efficient organization and retrieval of spatial data. When an object is added to a QuadTree, it is placed into the appropriate quadrant based on its coordinates. This spatial partitioning significantly reduces the number of comparisons needed to detect collisions, as objects are only compared with others within the same or neighboring quadrants.
 
-<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/dde707f0-e0ed-4cec-baf1-026ce1c0bcba" width="400">
+
+
+
+---
+
+
 
 ### Collision detection in large 3D space
+
+
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/61390e72-68cf-4779-8145-8e376b13eb09" height="300">
+
 
 Similar to quad-tree there is data structure for a 3d space which stores data in x,y,z coordinates.
 This data-structure is called Oct-tree. 
 
 This data structure handles cuboidal space and operates by dividing cuboid into 8 smaller cuboids.
 
+---
 
 
 ### Lazy rendering/loading (Static objects)
+
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/dfb981d3-fc55-4bd6-8b43-eaf226f8a500" width="300">
 
 Lazy rendering/loading is a process where only the visible distance based on the player's current position is rendered. This technique helps save RAM and GPU by rendering only what is important for the player's experience in the game.
 
@@ -130,11 +180,14 @@ Lazy rendering/loading is a process where only the visible distance based on the
 - By querying a range (x, y, w, h), we can get all objects present within that range.
 
 
-<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/dfb981d3-fc55-4bd6-8b43-eaf226f8a500" width="400">
 
 
+
+---
 
 ### Level wise rendering (Static objects)
+
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/f030d3f7-9692-46e7-9753-af11fc2f2f29" width="400">
 
 This type of rendering prioritizes loading high-priority objects first. For example, in games like the GTA series, high-priority objects include houses, roads, and barriers. Low-priority objects might be pebbles, insects, etc.
 
@@ -145,10 +198,15 @@ This type of rendering prioritizes loading high-priority objects first. For exam
 **Limitation:** 
 - To achieve this rendering method, we can use quad-trees by manually storing important objects at higher levels and lower-priority objects at lower levels.
 
-<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/f030d3f7-9692-46e7-9753-af11fc2f2f29" width="400">
+
+
+
+---
 
 
 ### Level wise rendering (Static object) + Objects randomly generated
+
+<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/f030d3f7-9692-46e7-9753-af11fc2f2f29" width="400">
 
 To handle the randomly generated objects (Not generated sequentially based on priority) we need the algorithm to automatically sort of objects based on priority, This implies we need to modify the algorithm to accommodate automated sorting.
 
@@ -170,6 +228,9 @@ eg: If high priority object was added at end. It should be loaded into top level
 - **Unsorted List:** Objects will remain unsorted at every level, which may impact performance and retrieval efficiency.
 
 
+---
+
+
 ### Pathfinding for NPCs (Following a static destination)
 
 Pathfinding in games involves finding the shortest path between a source and a destination. While Dijkstra's algorithm is efficient, it lacks the ability to explore and adapt to different scenarios. Therefore, we use the A* algorithm for its good performance.
@@ -185,6 +246,7 @@ Pathfinding in games involves finding the shortest path between a source and a d
 - **Heuristic** : Euclidean distance ensures that the algorithm considers the closest position to destination
 
 
+---
 
 
 ### Pathfinding for NPCs (Following a moving object)
@@ -199,6 +261,7 @@ In this scenario, Dijkstra's algorithm is highly inefficient as it will keep rec
 By leveraging the A* algorithm with an appropriate heuristic, pathfinding in dynamic scenarios becomes more efficient and responsive.
 
 
+---
 
 ### Event Handling 
 
@@ -213,6 +276,8 @@ Time complexity:
 -  Deletion : O(Log n)
 
 
+---
+
 ## Incomplete Work
 
 
@@ -221,11 +286,15 @@ Time complexity:
 In case of 2d shooting games. It is important for you to find intersection between 2 line segments or line segment and polygon. 
 
 **Code to find**:
-1. line segment intersection  
-2. intersection between polygon and line segment
+1. Line segment intersection  
+2. Intersection between polygon and line segment
 
 **Proposed Design**
-Instead of directly checking all points. Use of quad-trees to identify important local points.
+Instead of directly checking all objects. Use of quad-trees to identify important local objects.
 
-<img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/a9f66a17-3f71-45ad-8996-48142cd3199e" width="400">
+
 <img src="https://github.com/gokulgadkar/gaming-aps-portfolio/assets/92873066/e2e50955-1471-4871-83c7-07957bc15ee4" width="400">
+(b)
+
+In above image we need to show bullet marks on blue walls which can be done by finding if a line of fire intersects with edges of polygons
+
